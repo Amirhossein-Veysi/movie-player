@@ -8,7 +8,7 @@ import Alert from "react-bootstrap/Alert";
 
 const InputBar = ({ setUrl }) => {
   const [uinp, setUinp] = useState("");
-  const [empty, setEmpty] = useState(false);
+  const [error, setError] = useState("");
 
   //functions
   const handleInpChange = (e) => {
@@ -17,12 +17,12 @@ const InputBar = ({ setUrl }) => {
 
   const handleBtnClick = () => {
     if (!uinp) {
-      setEmpty(true);
+      setError("Please fill out the form below!");
       return;
     }
 
     setUrl(uinp);
-    setEmpty(false);
+    setError("");
   };
 
   return (
@@ -30,11 +30,9 @@ const InputBar = ({ setUrl }) => {
       <Row className="input-bar mt-5">
         <Col xs={12} lg={{ span: 8, offset: 2 }}>
           <Form>
-            {empty ? (
+            {error ? (
               <Form.Group>
-                <Alert variant={"danger"}>
-                  Please fill out the form below!
-                </Alert>
+                <Alert variant={"danger"}>{error}</Alert>
               </Form.Group>
             ) : (
               ""
