@@ -8,6 +8,7 @@ import InputBar from "./components/InputBar/";
 
 const App = () => {
   const [theme, setTheme] = useState(false);
+  const [url, setUrl] = useState("");
 
   //functions
   const changeTheme = () => {
@@ -19,7 +20,7 @@ const App = () => {
     <div className={"App " + (theme ? "bg-dark" : "bg-white")}>
       <Container fluid>
         <Header changeTheme={changeTheme} />
-        <InputBar />
+        <InputBar setUrl={setUrl} ad/>
       </Container>
     </div>
   );
