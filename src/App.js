@@ -20,7 +20,7 @@ const App = () => {
     <div className={"App " + (theme ? "bg-dark" : "bg-white")}>
       <Container fluid>
         <Header changeTheme={changeTheme} />
-        <InputBar setUrl={setUrl} ad/>
+        <InputBar setUrl={setUrl} />
       </Container>
     </div>
   );

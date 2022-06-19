@@ -5,6 +5,9 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
+//function import
+import isValidURL from "../../functions/isValidURL";
+import isValidVideo from "../../functions/isValidVideo";
 
 const InputBar = ({ setUrl }) => {
   const [uinp, setUinp] = useState("");
@@ -18,6 +21,14 @@ const InputBar = ({ setUrl }) => {
   const handleBtnClick = () => {
     if (!uinp) {
       setError("Please fill out the form below!");
+      return;
+    }
+    if (!isValidURL(uinp)) {
+      setError("The URL is not valid!");
+      return;
+    }
+    if (!isValidVideo(uinp)) {
+      setError("The url is not a valid video!");
       return;
     }
 
