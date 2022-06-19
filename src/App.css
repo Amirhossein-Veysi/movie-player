@@ -4,6 +4,10 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.App {
+  min-height: 100vh;
+}
+
 .unglow {
   outline: none;
   border: none !important;
@@ -14,5 +18,5 @@
 }
 
 .unglow:focus {
-  filter: contrast(98%);
+  filter: contrast(95%);
 }
