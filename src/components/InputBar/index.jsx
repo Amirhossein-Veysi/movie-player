@@ -18,7 +18,9 @@ const InputBar = ({ setUrl }) => {
     setUinp(e.target.value);
   };
 
-  const handleBtnClick = () => {
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
     if (!uinp) {
       setError("Please fill out the form below!");
       return;
@@ -40,7 +42,7 @@ const InputBar = ({ setUrl }) => {
     <>
       <Row className="input-bar mt-5">
         <Col xs={12} lg={{ span: 8, offset: 2 }}>
-          <Form>
+          <Form onSubmit={handleFormSubmit}>
             {error ? (
               <Form.Group>
                 <Alert variant={"danger"}>{error}</Alert>
@@ -57,11 +59,7 @@ const InputBar = ({ setUrl }) => {
                 value={uinp}
                 onChange={handleInpChange}
               />
-              <Button
-                variant="info"
-                className="text-white py-2 px-4 unglow"
-                onClick={handleBtnClick}
-              >
+              <Button variant="info" className="text-white py-2 px-4 unglow">
                 Play
               </Button>
             </Form.Group>
