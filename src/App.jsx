@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 //components
 import Header from "./components/Header";
@@ -15,8 +15,21 @@ const App = () => {
   //functions
   const changeTheme = () => {
     setTheme(!theme);
-    console.log(theme);
   };
+
+  useEffect(() => {
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (e) => setTheme(e.matches));
+    setTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+    // Remove event listener
+    return () => {
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .removeEventListener("change", () => {});
+    };
+  }, []);
 
   return (
     <div className={"App " + (theme ? "bg-dark" : "bg-white")}>
