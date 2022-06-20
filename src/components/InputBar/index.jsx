@@ -59,7 +59,7 @@ const InputBar = ({ setUrl }) => {
                 value={uinp}
                 onChange={handleInpChange}
               />
-              <Button variant="info" className="text-white py-2 px-4 unglow">
+              <Button variant="info" className="text-white py-2 px-4 unglow" type="submit">
                 Play
               </Button>
             </Form.Group>
