@@ -6,6 +6,7 @@ import Container from "react-bootstrap/Container";
 import Header from "./components/Header";
 import InputBar from "./components/InputBar";
 import NoVideo from "./components/NoVideo";
+import VideoPlayer from "./components/VideoPlayer";
 
 const App = () => {
   const [theme, setTheme] = useState(false);
@@ -22,7 +23,7 @@ const App = () => {
       <Container fluid>
         <Header changeTheme={changeTheme} />
         <InputBar setUrl={setUrl} />
-        {!url ? <NoVideo /> : "Video Player :)"}
+        {!url ? <NoVideo /> : <VideoPlayer url={url} />}
       </Container>
     </div>
   );

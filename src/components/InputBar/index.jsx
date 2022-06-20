@@ -53,7 +53,7 @@ const InputBar = ({ setUrl }) => {
                 className="unglow bg-light"
                 size="lg"
                 type="text"
-                placeHolder="Enter the URL!"
+                placeholder="Enter the URL!"
                 value={uinp}
                 onChange={handleInpChange}
               />
