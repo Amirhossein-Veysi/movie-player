@@ -1,6 +1,4 @@
 import "./Header.css";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
