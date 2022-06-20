@@ -33,7 +33,7 @@ const App = () => {
 
   return (
     <div className={"App " + (theme ? "bg-dark" : "bg-white")}>
-      <Header changeTheme={changeTheme} />
+      <Header changeTheme={changeTheme} theme={theme} />
       <Container fluid>
         <InputBar setUrl={setUrl} />
         {!url ? <NoVideo /> : <VideoPlayer url={url} />}

@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 
-const Header = ({ changeTheme }) => {
+const Header = ({ theme, changeTheme }) => {
   return (
     <>
       <Navbar className="bg-info shadow-sm">
@@ -18,7 +18,11 @@ const Header = ({ changeTheme }) => {
             <Form className="h-100">
               <div className="d-flex align-items-center h-100 text-white">
                 <p className="mb-0 me-2">light</p>
-                <Form.Check type="switch" onClick={changeTheme} />
+                <Form.Check
+                  type="switch"
+                  onClick={changeTheme}
+                  checked={theme}
+                />
                 <p className="mb-0">dark</p>
               </div>
             </Form>
